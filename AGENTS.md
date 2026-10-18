@@ -12,7 +12,7 @@
 
 
 <!-- ai-harness:begin -->
-## AI Harness 0.3.0
+## AI Harness 0.3.1
 
 开始工程任务时读取 `.harness/CONTRACT.md` 与 `.harness/project.md`。
 任务入口：`python3 .harness/run.py --help`；版本检查：`python3 .harness/run.py status`。

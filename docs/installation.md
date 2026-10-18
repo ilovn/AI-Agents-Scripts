@@ -8,22 +8,22 @@
 
 ```bash
 cd /path/to/business-project
-curl -fsSL https://raw.githubusercontent.com/ilovn/AI-Agents-Scripts/v0.3.0/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/ilovn/AI-Agents-Scripts/v0.3.1/install.sh | sh
 ```
 
-这条命令默认安装当前脚本对应的固定版本 v0.3.0。目标项目未初始化时执行 init，已初始化时执行 upgrade；不需要保留源码 checkout，不需要 sudo、pip 或修改 PATH。
+这条命令默认安装当前脚本对应的固定版本 v0.3.1。目标项目未初始化时执行 init，已初始化时执行 upgrade；不需要保留源码 checkout，不需要 sudo、pip 或修改 PATH。
 
 install.sh 已预设 `DEFAULT_REPO=ilovn/AI-Agents-Scripts`，无需用户重复提供仓库地址。需要选择工具或目标项目时可附加参数：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/ilovn/AI-Agents-Scripts/v0.3.0/install.sh \
+curl -fsSL https://raw.githubusercontent.com/ilovn/AI-Agents-Scripts/v0.3.1/install.sh \
   | sh -s -- --project /path/to/project --tools codex,claude
 ```
 
 也可以先下载审阅，再运行：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/ilovn/AI-Agents-Scripts/v0.3.0/install.sh -o /tmp/ai-harness-install.sh
+curl -fsSL https://raw.githubusercontent.com/ilovn/AI-Agents-Scripts/v0.3.1/install.sh -o /tmp/ai-harness-install.sh
 sh /tmp/ai-harness-install.sh --repo ilovn/AI-Agents-Scripts --project /path/to/project --dry-run
 sh /tmp/ai-harness-install.sh --repo ilovn/AI-Agents-Scripts --project /path/to/project --tools codex,claude
 ```

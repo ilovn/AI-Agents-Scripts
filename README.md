@@ -2,19 +2,19 @@
 
 面向 Claude Code、Codex、OpenCode、TRAE 的项目研发工程工具。通过一套轻量 Harness（上下文、规则、角色、工作流、验收门禁）和有界 Loop（执行、验证、反馈、再执行），让新项目和存量项目获得可续接、可审查的交付流程。
 
-当前版本 **0.3.0**，Python **3.10+**，运行时只使用标准库，无需 API Key 或安装第三方 Python 依赖。AI 模型与 CLI 由项目自行配置。
+当前版本 **0.3.1**，Python **3.10+**，运行时只使用标准库，无需 API Key 或安装第三方 Python 依赖。AI 模型与 CLI 由项目自行配置。
 
 ## 1. 给存量项目快速建立能力
 
 在业务项目目录中，一键安装 [ilovn/AI-Agents-Scripts](https://github.com/ilovn/AI-Agents-Scripts) 的固定版本：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/ilovn/AI-Agents-Scripts/v0.3.0/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/ilovn/AI-Agents-Scripts/v0.3.1/install.sh | sh
 ```
 
 脚本默认获取固定版本，自动执行 init 或 upgrade，安装项目规则、四类命令/技能和独立运行时；无需 sudo 或 pip。需要 Python 3.10+ 和 Git。安装源已预设为公开仓库，也可通过 `--repo` 显式选择其他 Git 仓库。
 
-支持 `--version 0.3.0`、`--ref <commit>`、`--project DIR`、`--tools codex,claude` 与 `--dry-run`；项目 status 可查看来源仓库、ref 和实际 commit。完整参数及发布步骤见 [一键安装说明](docs/installation.md)。
+支持 `--version 0.3.1`、`--ref <commit>`、`--project DIR`、`--tools codex,claude` 与 `--dry-run`；项目 status 可查看来源仓库、ref 和实际 commit。完整参数及发布步骤见 [一键安装说明](docs/installation.md)。
 
 已下载源码时，在本仓库执行，目标可以是已有 Git 项目，也可以是普通目录：
 

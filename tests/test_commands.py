@@ -64,7 +64,7 @@ class CommandsTest(unittest.TestCase):
         install(self.root, ["codex"])
         path = self.root / ".agents/skills/harness-bugfix/SKILL.md"
         path.write_text("team customization")
-        self.assertEqual(status(self.root)["drift"][0]["path"], str(path.relative_to(self.root)))
+        self.assertEqual(status(self.root)["drift"][0]["path"], path.relative_to(self.root).as_posix())
         with self.assertRaises(HarnessError):
             install(self.root, None, upgrade=True)
         result = install(self.root, None, upgrade=True, replace_modified=True)

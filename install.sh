@@ -2,7 +2,7 @@
 # Project-local installer; also works via: curl .../install.sh | sh -s -- ...
 set -eu
 
-INSTALLER_VERSION=0.3.0
+INSTALLER_VERSION=0.3.1
 # Public default; --repo and HARNESS_REPO can override it.
 DEFAULT_REPO=ilovn/AI-Agents-Scripts
 repo=${HARNESS_REPO:-$DEFAULT_REPO}
@@ -23,13 +23,13 @@ AI Harness Kit installer
 
 Usage:
   sh install.sh [options]
-  curl -fsSL https://raw.githubusercontent.com/ilovn/AI-Agents-Scripts/v0.3.0/install.sh | sh
+  curl -fsSL https://raw.githubusercontent.com/ilovn/AI-Agents-Scripts/v0.3.1/install.sh | sh
 
 Options:
   --repo REPOSITORY     GitHub OWNER/REPO, HTTPS/SSH Git URL, or local Git path
                        Default: ilovn/AI-Agents-Scripts (or HARNESS_REPO)
   --version X.Y.Z       Fetch tag vX.Y.Z and verify the source version
-                       Default: the version of this installer (0.3.0)
+                       Default: the version of this installer (0.3.1)
   --ref REF             Fetch a branch, tag or full commit instead of --version
   --project DIRECTORY  Target project (default: the caller's current directory)
   --tools LIST         Comma-separated: claude,codex,opencode,trae

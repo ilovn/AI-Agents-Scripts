@@ -1,5 +1,10 @@
 # 更新记录
 
+## 0.3.1 — 2026-10-18
+
+- 修复 Windows 下 CRLF 换行导致托管规则误报冲突的问题，并保持原有换行风格。
+- 修正 Windows 路径断言，关闭矩阵 fail-fast 以便完整反馈各平台结果。
+
 ## 0.3.0 — 2026-10-18
 
 - 新增 POSIX install.sh：公开 Git 仓库下载、固定版本、branch/tag/commit 选择、自动 init/upgrade、工具选择及 dry-run。

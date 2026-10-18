@@ -65,6 +65,18 @@ class ProjectTest(unittest.TestCase):
         self.assertIn("团队新增规则", agents.read_text())
         self.assertEqual(status(self.root)["drift"], [])
 
+    def test_crlf_owned_blocks_are_canonical_and_real_edits_still_drift(self):
+        self.setup_project()
+        agents = self.root / "AGENTS.md"
+        data = agents.read_bytes().replace(b"\n", b"\r\n")
+        agents.write_bytes(data + b"\r\n\xe5\x9b\xa2\xe9\x98\x9f\xe8\xa7\x84\xe5\x88\x99\r\n")
+        self.assertEqual(status(self.root)["drift"], [])
+        self.assertEqual(install(self.root, None, upgrade=True)["changed"], [])
+        agents.write_bytes(agents.read_bytes().replace(b"AI Harness 0.3.1", b"AI Harness customized", 1))
+        self.assertEqual(len(status(self.root)["drift"]), 1)
+        with self.assertRaises(HarnessError):
+            install(self.root, None, upgrade=True)
+
     def test_drift_blocks_upgrade_without_partial_writes(self):
         self.setup_project()
         role = self.root / ".harness/roles/qa.md"

@@ -19,11 +19,31 @@ def block(text):
     return text[text.index(BEGIN):text.index(END) + len(END)]
 
 
+def block_digest(text):
+    """Hash owned content canonically while preserving all surrounding bytes."""
+    owned = block(text)
+    if owned is None:
+        return None
+    normalized = owned.replace("\r\n", "\n").replace("\r", "\n")
+    return digest(normalized.encode())
+
+
+def _newline(text):
+    if "\r\n" in text:
+        return "\r\n"
+    if "\r" in text:
+        return "\r"
+    return "\n"
+
+
 def merge(text, addition):
     old = block(text)
     if old is not None:
-        return text.replace(old, addition, 1)
-    return text + ("\n\n" if text and not text.endswith("\n\n") else "") + addition + "\n"
+        newline = _newline(old)
+        return text.replace(old, addition.replace("\n", newline), 1)
+    newline = _newline(text)
+    separator = newline * 2 if text and not text.endswith((newline * 2, "\n\n", "\r\r")) else ""
+    return text + separator + addition.replace("\n", newline) + newline
 
 
 def release(version):
@@ -84,10 +104,10 @@ def install(root, selected, upgrade=False, dry_run=False, replace_modified=False
     for name, data in candidates.items():
         current = read_bytes(root, name)
         kind = kinds[name]
-        current_owned = block(current.decode()) if current is not None and kind == "block" else None
-        actual = digest(current_owned.encode()) if current_owned is not None else (
+        current_text = current.decode() if current is not None and kind == "block" else None
+        actual = block_digest(current_text) if current_text is not None else (
             digest(current) if current is not None and kind != "block" else None)
-        desired = digest(entry_block().encode()) if kind == "block" else digest(data)
+        desired = block_digest(entry_block()) if kind == "block" else digest(data)
         previous = old["files"].get(name)
         if previous and actual != previous["sha256"] and actual != desired:
             conflicts.append(name)
@@ -129,8 +149,7 @@ def status(root):
     for name, record in installed["files"].items():
         data = read_bytes(root, name)
         if record["kind"] == "block" and data is not None:
-            owned = block(data.decode())
-            actual = digest(owned.encode()) if owned is not None else None
+            actual = block_digest(data.decode())
         else:
             actual = digest(data) if data is not None else None
         if actual != record["sha256"]:

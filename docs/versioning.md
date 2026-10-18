@@ -19,7 +19,7 @@ SemVer：修复兼容问题升 patch，新增兼容能力升 minor，破坏行�
 4. 创建对应 `vX.Y.Z` tag，按团队渠道分发该 tag 的源码或构建产物。
 5. 在业务项目用新发布的安装器执行 upgrade；提交业务项目 manifest 和 runtime 的改动，使工程能力版本随业务代码一起可追溯。
 
-源码仓库为 [ilovn/AI-Agents-Scripts](https://github.com/ilovn/AI-Agents-Scripts)，通过 Git tag 与 install.sh 分发，尚未上传 PyPI。当前版本是 0.3.0，初始版本为 0.1.0。
+源码仓库为 [ilovn/AI-Agents-Scripts](https://github.com/ilovn/AI-Agents-Scripts)，通过 Git tag 与 install.sh 分发，尚未上传 PyPI。当前版本是 0.3.1，初始版本为 0.1.0。
 
 ## 升级与回滚边界
 

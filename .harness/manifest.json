@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "kit_version": "0.3.0",
+  "kit_version": "0.3.1",
   "installed_at": "2026-10-18T00:20:54.915852+00:00",
-  "updated_at": "2026-10-18T01:14:43.922885+00:00",
+  "updated_at": "2026-10-18T01:23:59.959243+00:00",
   "tools": [
     "claude",
     "codex",
@@ -192,7 +192,7 @@
     },
     ".harness/runtime/harnesskit/__init__.py": {
       "kind": "file",
-      "sha256": "663c638ec7199d6af5f487e25447dc50454bbde94d255dde1c212ded0d9a2c47"
+      "sha256": "0f5c1b2b645324c09b655e3ccd73c67c575a87d76e98956986c3a4c47c6cf435"
     },
     ".harness/runtime/harnesskit/__main__.py": {
       "kind": "file",
@@ -204,7 +204,7 @@
     },
     ".harness/runtime/harnesskit/install.py": {
       "kind": "file",
-      "sha256": "36d127654bacb2fcda0633ee65dcc07d4677952c5d455842b8ed7da49abd74d1"
+      "sha256": "aef31443ff1aecb7c8cacf502bf0487ab4cd80766bfd4d142a957622a8033e83"
     },
     ".harness/runtime/harnesskit/storage.py": {
       "kind": "file",
@@ -224,11 +224,11 @@
     },
     "AGENTS.md": {
       "kind": "block",
-      "sha256": "eb177bf501fc2e4034200bc83c585b44691eda6389e5add02e65af302cd1466f"
+      "sha256": "424dbaf86e4fa232ebcd13d4b6afb79946dacced4cd8788a5ed0c0bc76c47f68"
     },
     "CLAUDE.md": {
       "kind": "block",
-      "sha256": "eb177bf501fc2e4034200bc83c585b44691eda6389e5add02e65af302cd1466f"
+      "sha256": "424dbaf86e4fa232ebcd13d4b6afb79946dacced4cd8788a5ed0c0bc76c47f68"
     }
   },
   "source": null
