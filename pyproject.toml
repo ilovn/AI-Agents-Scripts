@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-harness-kit"
+version = "0.3.0"
+description = "Versioned engineering harness and bounded delivery loops for coding agents"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = []
+
+[project.scripts]
+ai-harness = "harnesskit.cli:main"
+
+[tool.setuptools]
+packages = ["harnesskit"]

@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "gates": [
+    {"name": "unit", "argv": ["python3", "-m", "unittest", "discover", "-s", "tests", "-v"], "timeout_seconds": 120}
+  ],
+  "loop": {"max_rounds": 5, "timeout_seconds": 300, "stagnation_rounds": 2}
+}

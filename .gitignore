@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+build/
+dist/
+.coverage
+.pytest_cache/
+
+# Local installation journals and execution logs are not public release sources.
+.harness/backups/
+.harness/.lock/
+.harness/tasks/*/runs/
